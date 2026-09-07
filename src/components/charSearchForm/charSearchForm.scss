@@ -1,0 +1,122 @@
+@use "../../style/variables.scss" as *;
+
+.char {
+  &__search {
+    &-form {
+      padding: 18px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 5;
+      background-color: #fff;
+    }
+    &-label {
+      display: block;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000;
+    }
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 12px;
+      gap: 25px;
+
+      align-items: center;
+      input {
+        padding: 0 10px;
+        width: 100%;
+        height: 38px;
+        border: none;
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 14px;
+      }
+      button,
+      .button {
+        width: 100%;
+      }
+    }
+    &-error {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+      color: $main-color;
+    }
+    &-critical-error {
+      margin-top: 20px;
+    }
+    &-success {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+      color: #03710e;
+    }
+    &-img {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .char {
+    &__search {
+      &-form {
+        position: relative;
+        padding: 25px;
+      }
+      &-label {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      &-wrapper {
+        margin-top: 15px;
+        flex-wrap: nowrap;
+        input {
+          width: 300px;
+        }
+        button,
+        .button {
+          width: auto;
+        }
+      }
+      &-error,
+      &-success {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      &-critical-error {
+        margin-top: 25px;
+      }
+      &-img {
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 110px;
+        height: 110px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .char {
+    &__search {
+      &-wrapper {
+        justify-content: space-between;
+        input {
+          width: 100%;
+        }
+      }
+      &-img {
+        display: none;
+      }
+    }
+  }
+}

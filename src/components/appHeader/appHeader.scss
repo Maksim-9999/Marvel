@@ -1,0 +1,85 @@
+@use "../../style/variables.scss" as *;
+
+.app {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+    padding: 16px 0;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    span {
+      color: $main-color;
+    }
+  }
+  &__menu {
+    width: 100%;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      column-gap: 16px;
+      row-gap: 8px;
+      font-weight: bold;
+      font-size: 22px;
+      li {
+        &:not(:last-child)::after {
+          content: "/";
+          margin: 0 8px;
+        }
+        a:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .app {
+    &__header {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__title {
+      font-size: 26px;
+    }
+    &__menu {
+      width: auto;
+      ul {
+        justify-content: space-between;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1240px) {
+  .app {
+    &__title {
+      font-size: 28px;
+    }
+    &__menu {
+      ul {
+        font-size: 26px;
+      }
+    }
+  }
+}
+@media (min-width: 1240px) {
+  .app {
+    &__title {
+      font-size: 32px;
+    }
+    &__menu {
+      ul {
+        font-size: 28px;
+      }
+    }
+  }
+}
